@@ -11,12 +11,6 @@
 <body ng-controller="userController">
 <div class="container">
 
-<h3>Todo:</h3>
-<ol>
-  <li> Change the Firebase url to be yours.</li>
-  <li> Change the Google Analytics tracking code to be yours.</li>
-  <li> Delete these todo bullets.</li>
-</ol>
 <hr>
 The Singapore Government has launched a scheme where they will pay university students and recent graduates to work for local SaaS companies for 
 
@@ -117,8 +111,8 @@ possibility of you joining our company to help facilitate our growth.
 <hr>
 Please consider reviewing the applications of:
 <ul>
-  <li>the team presenting before us (<a href="">Team 4</a>)</li>
-  <li>the team presenting after us (<a href="">Team 6</a>)</li>
+  <li>the team presenting before us (<a href="https://week3.firebaseapp.com/">Team 15</a>)</li>
+  <li>the team presenting after us (<a href="http://duyloc91.github.io/week3-cloud/">Team 17</a>)</li>
 </ul>
 
 </div>
@@ -243,26 +237,6 @@ Please consider reviewing the applications of:
     }
     
     }]);
-{
-  "rules": {
-    "user":{
-          "$user_id": {
-            // grants write access to the owner of this user account whose uid must exactly match the key ($user_id)
-            ".write": "$user_id === auth.uid",
-            ".read": true
-          }
-    }, 
-    "feedback":{
-      //Let everyone read all feedback if they are logged in. 
-      ".read": "auth!=null",
-      //Only let people create and edit their own items. 
-      "$feedbackID":{
-        ".write": "(newData.child('uid').val() == auth.uid || data.child('uid').val() == auth.uid) && auth!=null"
-      }
-    }
-    
-  }
-}
   </script>
   
   
